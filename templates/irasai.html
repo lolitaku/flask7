@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Čia yra vartotojo {{ current_user.vardas}} įrašai</h1>
+
+<p style="color:blue">Prekes:</p>
+{% if irasai %}
+{% for transaction in irasai %}
+<hr>
+<p>Pavadinimas: {{transaction.item}}</p>
+<p style="color:rgb(186, 24, 48)"></pstyle>Kaina: {{transaction.price}}</p>
+<p>Kiekis: {{transaction.amount}}</p>
+
+
+{% endfor %}
+{% endif %}
+<hr>
+
+{% endblock %}
